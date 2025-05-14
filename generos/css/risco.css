@@ -1,0 +1,18 @@
+.titulo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    h2 {
+        margin: 0;
+        font-size: 32px;
+    };
+  }
+  .riscoP {
+    width: 328px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 75%, rgba(255, 255, 255, 1) 100%);
+  }
