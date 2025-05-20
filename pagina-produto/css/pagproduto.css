@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+}
+
+.divisoria {
+    margin-top: 10px;
+    min-width: 1px;
+    height: 675px;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.pageProduto {
+    width: 100%;
+    font-family: "Alata", sans-serif;
+}
+
+.mainProduto {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dadosP, .preview  {
+    padding: 70px 90px 70px 90px;
+    width: 50%;
+}
+
+.preview {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.previewContainer, .dadosPcontainer {
+    max-width: fit-content;
+}
+
+/* preview */
+
+.imgs {
+    display: flex;
+    gap: 40px;
+
+    .imgDestaque {
+        width: 460px;
+        height: 310px;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .item {
+        background-image: url(https://i.pinimg.com/736x/7a/75/5d/7a755db937c4b88fc41cb8ec942aa379.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .active {
+        background-image: url(https://i.pinimg.com/736x/de/12/11/de1211c90f928e1d57b6f330667cae07.jpg);
+    }
+
+    .prev {
+        background-image: url(https://naturvet.com/cdn/shop/articles/shutterstock_1640876206.jpg?v=1691013127);
+    }
+
+    .next {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2fXDKKRQJSjfreEqapAUupSAEejHqTcvOhyDi2BMqA94bJ0tLmdnoeU4GleHAI8Pw-18&usqp=CAU);
+    }
+
+
+    .miniImgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .mini {
+            width: 95px;
+            height: 90px;
+            background-color: rgba(217, 217, 217, 1);
+        }
+    }
+
+}
+
+.buttonsImg {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    margin-left: 340px;
+
+    .voltar, .ir {
+        width: 28px;
+        height: 28px;
+        border-radius: 100%;
+        font-family: "Victor Mono", monospace;
+        font-weight: 900;
+        font-size: 16px;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .voltar {
+        background-color: white;
+        border: 2px solid black;
+    }
+
+    .ir {
+        background-color: black;
+        color: white;
+        border: none;
+    }
+}
+
+.recentes {
+    margin-top: 70px;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+
+    .rcts {
+        display: flex;
+        gap: 70px;
+
+        p {
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .imgLivro {
+        width: 104px;
+        height: 104px;
+        /* background-image: url(https://i.pinimg.com/736x/de/12/11/de1211c90f928e1d57b6f330667cae07.jpg); */
+        background-color: rgba(217, 217, 217, 1);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* preview - fim */
+
+
+/* dadosP */
+
+/* produto */
+.nomeP {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.infoP {
+    font-size: 15px;
+    padding-left: 5px;
+}
+/* produto - fim */
+   
+/* preco */
+.precoP {
+    margin-top: 65px;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.avaliacao {
+    display: flex;
+    flex-direction: row;
+}
+
+.quantAvals {
+    margin-left: 30px;
+}
+
+/* Estrelas */
+.rating-box {
+    display: flex;
+    pointer-events: auto;
+}
+
+.rating-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.stars i {
+    color: #e6e6e6;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    pointer-events: auto; 
+}
+
+.stars i.active {
+    color: #000000;
+}
+
+.littleStars i {
+    font-size: 11px;
+}
+/* Estrelas - fim */
+/* preco - fim */
+
+/* cor */
+.selectCor {
+    margin-top: 60px;
+    
+    h2 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+    
+    .cores {
+        margin-top: 25px;
+        display: flex;
+        gap: 40px;
+    }
+    
+    .cor {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        border: none;
+        transition: border 0.1s ease;
+    }
+    
+    .cor:hover {
+        cursor: pointer;
+    }
+    
+    .cor.active {
+        border: 2px rgb(44, 44, 44) solid;
+    }
+    
+    .cor.blur {
+        border: none;
+    }
+    
+    .c1 {
+        background-color: rgba(239, 226, 226, 0.63);
+    }
+    
+    .c2 {
+        background-color: rgba(190, 180, 180, 1);
+    }
+    
+    .c3 {
+        background-color: rgba(158, 154, 154, 1);
+    }
+    
+    .c4 {
+        background-color: rgba(105, 103, 103, 1);
+    }
+}
+/* cor - fim */
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+    
+    button {
+        font-family: "Alata", sans-serif;
+        font-size: 24px;
+        width: 210px;
+        height: 60px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+    }
+}
+
+.compre {
+    background-color: white;
+    border: 3px solid black;
+}
+
+.compre:hover {
+    /* background-color: black;
+    color: white;
+    border: none; */
+    scale: 1.1;
+}
+
+.adicione {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.adicione:hover {
+    /* background-color: white;
+    border: 3px solid black;
+    color: black; */
+    scale: 1.1;
+}
+
+/* Buttons - fim*/
+
+/* Entrega Frete */
+.entregaFrete {
+    margin-top: 50px;
+    font-size: 15px;
+
+    .entrega, .frete {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        margin-top: 7px;
+    }
+    
+    hr {
+        border: 1px rgba(217, 217, 217, 1) solid;
+    }
+}
+
+/* Entrega Frete - fim */
+
+/* pesquisa */
+.pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button {
+    width: 220px;
+    height: 190px;
+    background-color: black;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.search-button {
+    color: white;
+}
+
+.pesquisa svg {
+    height: 40px;
+    position: absolute;
+    top: 8%;
+}
+/* pesquisa - fim */
+
+.futuroFooter {
+    position: absolute; /* para cobrir o botão de pesquisa*/
+    top: 855px; /* para cobrir o botão de pesquisa, mas tem q mudar o tamanho se aumentar as coisas q tem na tela*/
+    background-color: rgb(220, 235, 245);
+    height: 300px;
+    width: 100%;
+}
+
+/* deep seek */
+body {
+    overflow-x: auto;
+    min-width: fit-content;
+}
+
+.pageProduto {
+    width: 100%;
+    min-width: 1280px; /* ou a largura mínima que seu layout precisa */
+    font-family: "Alata", sans-serif;
+}
+
+.mainProduto {
+    width: 100%;
+    min-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2 versao */
+.futuroFooter {
+    position: relative; /* Mude de absolute para relative */
+    top: auto; /* Remova o posicionamento fixo */
+    background-color: rgb(220, 235, 245);
+    height: 300px;
+    width: 100%;
+    margin-top: 40px; /* Adicione margem se necessário */
+}
+.pageProduto {
+    width: 100%;
+    min-width: 100%; /* Garante que ocupará toda a largura */
+    font-family: "Alata", sans-serif;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+.mainProduto {
+    width: 100%;
+    max-width: 100%; /* Garante que não ultrapassará a largura do pai */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3 versao */
+.futuroFooter {
+    position: relative; /* Mantém como relative */
+    background-color: rgb(220, 235, 245);
+    height: 300px;
+    width: 100%;
+    z-index: 1; /* Garante que o footer fique acima de outros elementos */
+    margin-top: -100px; /* Puxa o footer para cima, cobrindo parte do botão */
+    padding-top: 100px; /* Compensa o espaço do botão */
+}
+
+
+.search-button {
+    width: 220px;
+    height: 190px;
+    background-color: black;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: relative;
+    z-index: 3; /* Garante que o botão fique acima do footer */
+}
+
+.pageProduto {
+    width: 100%;
+    font-family: "Alata", sans-serif;
+    padding-bottom: 100px; /* Espaço para o botão não ficar cortado */
+}
+
+.search-button {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/*  4 versao */
+.pesquisa {
+    position: relative;
+    z-index: 1; /* Botão fica ABAIXO do footer */
+    margin-bottom: -105px;
+}
+
+.search-button {
+    width: 220px;
+    height: 190px;
+    background-color: black;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    /* Remova o z-index daqui */
+}
+.futuroFooter {
+    position: relative;
+    background-color: rgb(220, 235, 245);
+    height: 300px;
+    width: 100%;
+    z-index: 2; /* Footer fica ACIMA do botão */
+    margin-top: -100px; /* Puxa o footer para cima */
+    padding-top: 100px; /* Compensa o espaço */
+}
+.pageProduto {
+    width: 100%;
+    font-family: "Alata", sans-serif;
+    padding-bottom: 100px; /* Espaço para o botão */
+    position: relative; /* Novo - contexto de empilhamento */
+}
+.futuroFooter {
+    margin-top: -120px;
+    padding-top: 120px;
+}

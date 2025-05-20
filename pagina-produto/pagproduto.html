@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/pagproduto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+
+    <div class="pageProduto">
+
+        <div class="mainProduto">
+            <div class="preview">
+                <div class="previewContainer">
+                    <div class="imgs">
+                        <div class="imgDestaque item active">
+                        </div>
+        
+                        <div class="miniImgs">
+                            <div class="mini item next"></div>
+                            <div class="mini item"></div>
+                            <div class="mini item prev"></div>
+                        </div>
+                    </div> <!-- imgs -->
+        
+                    <div class="buttonsImg">
+                        <button class="voltar buton"><</button>
+                        <button class="ir buton">></button>
+                    </div>
+        
+                    <div class="recentes">
+                        <h2>Vistos recentemente</h2>
+                        <div class="rcts">
+        
+                            <div class="lvr">
+                                <div class="imgLivro"></div>
+        
+                                <p>R$ 00.00</p>
+                                <div class="avaliacao">
+                                    <div class="rating-box" data-rating-id="recent-1">
+                                        <div class="stars littleStars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="lvr">
+                                <div class="imgLivro"></div>
+        
+                                <p>R$ 00.00</p>
+                                <div class="avaliacao">
+                                    <div class="rating-box" data-rating-id="recent-2">
+                                        <div class="stars littleStars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="lvr">
+                                <div class="imgLivro"></div>
+        
+                                <p>R$ 00.00</p>
+                                <div class="avaliacao">
+                                    <div class="rating-box" data-rating-id="recent-3">
+                                        <div class="stars littleStars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div> <!-- rcts -->
+                    </div> <!-- recentes -->
+                </div> <!-- previewContainer -->
+            </div> <!-- preview -->
+    
+            <div class="divisoria"></div>
+    
+            <div class="dadosP">
+                <div class="dadosPcontainer">
+                    
+                    <div class="produto">
+                        <h1 class="nomeP">Título Do Produto</h1>
+                        <p class="infoP">Descrição do produto</p>
+                    </div>
+        
+                    <div class="preco">
+                        <p class="precoP">R$ 00.00</p>
+        
+                        <div class="avaliacao">
+                            <div class="rating-box" data-rating-id="main-product">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="quantAvals">0 Avaliações</p>
+                        </div>
+                    </div>
+        
+                    <div class="selectCor">
+                        <h2>Selecione a variação</h2>
+                        <div class="cores">
+                            <button class="cor c1"></button>
+                            <button class="cor c2"></button>
+                            <button class="cor c3"></button>
+                            <button class="cor c4"></button>
+                        </div>
+                    </div>
+        
+                    <div class="buttons">
+                        <button class="compre" onclick="">Compre agora</button>
+                        <button class="adicione" onclick="">Adicione a cesta</button>
+                    </div>
+        
+                    <div class="entregaFrete">
+                        <div class="entrega">
+                            <p style="padding-left: 5px;">Prazo de entrega</p>
+                            <p>01/01/2025</p>
+                        </div>
+                        <hr>
+                        <div class="frete">
+                            <p style="padding-left: 5px;">Frete a pagar</p>
+                            <p>R$ 00.00</p>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pesquisa"> <!-- fazer position absolute em relação ao footer-->
+            <div class="search-button" onclick="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+            </div>
+        </div>
+    </div>
+
+    <footer class="futuroFooter"></footer>
+    
+    <script src="js/stars.js"></script>
+    <script src="js/selectcolor.js"></script>
+    <script src="js/carousel.js"></script>
+</body>
+</html>
