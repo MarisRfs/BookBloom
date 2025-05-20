@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.main-livros {
+    /* max-width: 1000px; */
+    max-width: fit-content;
+    margin: 0 auto;
+  }
+  
+  /* talvez tire para voltar a ser -50%
+  .scroll-button {
+    transform: translateY(-150%);
+  }
+  
+  .left-arrow {
+    left: -50px;
+  }
+  
+  .right-arrow {
+    right: -50px;
+  } */
+  
+  /* Estilos específicos para a seção de livros */
+  .book-item {
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right: 0px;
+    text-align: center;
+    flex-grow: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .book-item img {
+    max-width: 100%;
+    height: 300px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+  }
+  
+  .book-item h3 {
+    font-size: 20px;
+  }
+  
+  .book-item p {
+    font-size: 16px;
+    font-family: "Alata", sans-serif;
+  }
+  
+  /* Efeitos visuais adicionais opcionais */
+  .book-item:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+/* principal */
+.books {
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 35px 15px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+}
+
+.books::-webkit-scrollbar {
+    display: none;
+}
+
+.books {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* principal - fim */
+
+/* genero */
+
+
+
+.banner {
+    height: 260px;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.h1 {
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-size: 128px;
+}
+
+.imgBanner {
+    height: 100%;
+    /* max-width: 300px; */
+}
+
+.books,
+.titulo2 {
+    margin: 0 auto;
+}
+
+.titulo2 {
+    display: flex;
+    align-items: center;
+    width: 900px;
+    margin-bottom: 25px;
+
+    h2 {
+        margin: 0px 70px;
+        font-size: 32px;
+        font-weight: 400;
+        font-family: "Alata", sans-serif;
+    }
+}
+
+.riscoP {
+    width: 283px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 75%, rgba(255, 255, 255, 1) 100%);
+}
