@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetSelector = this.dataset.target;
         const carousel = document.querySelector(`.${targetSelector}`);
         const isLeft = this.classList.contains('left-arrow');
-        const itemWidth = carousel.querySelector(targetSelector === 'livros-recomendados' ? '.book-item' : '.autor-item').offsetWidth;
-        const itemMarginRight = parseInt(window.getComputedStyle(carousel.querySelector(targetSelector === 'livros-recomendados' ? '.book-item' : '.autor-item')).marginRight);
+        const itemWidth = carousel.querySelector(targetSelector === 'livros-recomendados' ? '.book-item' : '.genero-item').offsetWidth;
+        const itemMarginRight = parseInt(window.getComputedStyle(carousel.querySelector(targetSelector === 'livros-recomendados' ? '.book-item' : '.genero-item')).marginRight);
         const scrollAmount = itemWidth + itemMarginRight;
   
         if (isLeft) {
