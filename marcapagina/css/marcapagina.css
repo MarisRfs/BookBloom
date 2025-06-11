@@ -1,0 +1,87 @@
+/* Marca Página Lateral - Versão Corrigida */
+.marca-pagina {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Alterado para -300px (largura do elemento) */
+  width: 250px;
+  height: 100%;
+  background-color: #f5f5f5; /* Cor de fallback */
+  background-image: url('../img/Book.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.marca-pagina.ativo {
+  right: 0;
+}
+
+.marca-pagina .conteudo {
+  padding: 62px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para melhor legibilidade */
+  height: 100%;
+}
+
+.marca-pagina .conteudo button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.marca-pagina .conteudo button:hover {
+  background-color: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.fechar-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.fechar-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Overlay para quando o marca página estiver ativo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+}
+
+.marca-pagina.ativo + .overlay {
+  display: block;
+}
