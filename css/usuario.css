@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap'); /* Corrigi 'display=syb' para 'display=swap' */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(248, 245, 238);
+  color: #a5572a; /* Cor de texto padrão para o corpo */
+  min-height: 100vh;
+}
+
+h2 {
+  color: #7b4120; /* Cor para títulos h2 */
+}
+
+a {
+  text-decoration: none;
+  color: #7b4120; /* Cor para links */
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo principal */
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 800px; /* Mantém a largura do cabeçalho centralizada */
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.page-header .bloom {
+  font-family: 'Italiana', serif;
+  font-size: 47px;
+  margin-bottom: 25px;
+  color: #7b4120;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d0b7a9c1;
+  padding: 10px 20px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 600px; /* Mantém a largura da barra de pesquisa */
+  background: #fffcfa;
+  box-shadow: 0 4px 12px rgba(174, 106, 23, 0.045);
+  transition: border-color 0.3s ease;
+  margin: 0 auto 40px auto;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: none;
+  padding-left: 10px;
+  width: 100%;
+  font-size: 16px;
+  color: #423632;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-box i {
+  color: #aea398;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.search-box input:focus + i,
+.search-box input:not(:placeholder-shown) + i {
+  color: #c9c6c1;
+}
+
+.search-box input::placeholder {
+  color: #beb9b3;
+  font-style: italic;
+}
+
+/* --- Estilos para os Carrosséis de Livros --- */
+
+.books-container {
+  position: relative;
+  width: 100%;
+  max-width: 1225px; /* Largura total desejada para o carrossel + setas */
+  margin-bottom: 50px;
+  /* Equivalente a .secao-carrossel com margin e padding para o container */
+  margin-left: 20px; /* Adaptação de .secao-carrossel */
+  margin-right: 20px; /* Adaptação de .secao-carrossel */
+  padding: 20px; /* Adaptação de .secao-carrossel */
+}
+
+.books-container h2 {
+  /* margin-bottom: 25px; Removido, já que .secao-carrossel h2 define 30px */
+  margin-top: 0px; /* Adaptação de .secao-carrossel h2 */
+  margin-bottom: 30px; /* Adaptação de .secao-carrossel h2 */
+  color: #7b4120;
+  font-size: 22px;
+  padding-left: 10px; /* Mantido para alinhamento */
+}
+
+.books-wrapper {
+  display: flex; /* Adicionado para que as setas e o carrossel fiquem lado a lado */
+  align-items: center; /* Centraliza verticalmente o carrossel e as setas */
+  position: relative;
+  width: 100%;
+  /* Padding 0 30px removido daqui, pois as setas agora terão posicionamento absoluto fora do scroll-area */
+}
+
+.books { /* Equivalente a .books-carousel */
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Esconde a barra de rolagem no IE/Edge */
+  scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+  flex-grow: 1; /* Permite que o carrossel ocupe o espaço restante */
+  padding: 0 10px; /* Padding interno para os livros, se necessário */
+  gap: 30px; /* Espaçamento entre os itens */
+}
+
+.books::-webkit-scrollbar {
+  display: none; /* Esconde a barra de rolagem no Webkit (Chrome, Safari) */
+}
+
+.book-item {
+  flex: 0 0 auto; /* Não cresce, não encolhe, usa largura base */
+  width: 230px; /* Largura fixa para cada item de livro, como no exemplo */
+  text-align: center;
+  background-color: rgb(255, 255, 255); /* Fundo branco para o item */
+  border-radius: 10px; /* Borda arredondada para o item */
+  padding: 15px; /* Padding interno para o item de livro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o item */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.book-item:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 200px; /* Largura da capa do livro */
+  height: 300px; /* Altura da capa do livro */
+  border-radius: 8px; /* Borda arredondada para a capa */
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px; /* Espaço abaixo da capa */
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.book-cover i {
+  font-size: 60px; /* Aumenta o ícone de fallback */
+  color: #ddd;
+}
+
+.book-upload {
+  display: none; /* Mantido oculto */
+}
+
+.book-info {
+  text-align: center;
+  width: 100%;
+}
+
+.book-info h4 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  color: #7b4120;
+  font-size: 16px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.book-info p {
+  color: #a5572a; /* Cor para o autor, vindo do body */
+  font-size: 14px;
+  margin-bottom: 12px;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-rating { /* Equivalente a .book-item .avaliacao */
+  color: #e4bd60; /* Estrelas em dourado */
+  font-size: 1.2em; /* Tamanho da fonte das estrelas, ajustado um pouco maior */
+  margin-bottom: 5px; /* Espaçamento abaixo da avaliação */
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5572a;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.book-actions:hover {
+  background-color: #f5f5f5;
+}
+
+.book-actions i {
+  margin-right: 6px;
+}
+
+.saved {
+  color: #b7eabc;
+}
+
+.liked {
+  color: #ab4a5d;
+}
+
+/* --- Estilos para as Setas de Navegação --- */
+.nav-arrow { /* Equivalente a .scroll-button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 5px; /* Padding para o botão */
+  width: 50px; /* Largura da área clicável */
+  height: 50px; /* Altura da área clicável */
+  background-color: rgba(255, 255, 255, 0.466); /* Fundo sutil */
+  border-radius: 50%; /* Borda arredondada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  transition: all 0.2s;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.nav-arrow.left { /* Equivalente a .left-arrow */
+  left: -25px; /* Ajuste para fora do books-wrapper, considerando o padding do books-container */
+}
+
+.nav-arrow.right { /* Equivalente a .right-arrow */
+  right: -25px; /* Ajuste para fora do books-wrapper, considerando o padding do books-container */
+}
+
+.nav-arrow.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.nav-arrow.disabled:hover {
+  transform: translateY(-50%);
+}
+
+.nav-arrow i { /* Estilo para o ícone Font Awesome dentro da seta */
+  font-size: 24px; /* Aumentado para melhor visibilidade */
+  color: #7b4120;
+}
+
+/* --- Outros estilos do exemplo que você forneceu, adaptados ou mantidos --- */
+
+.all { /* Se você tiver uma div com classe 'all' envolvendo todo o main, descomente e ajuste */
+  /* margin: 0 5%;
+  padding: 10px 15px; */
+}
+
+/* Se você for usar um banner na sua página */
+/*
+.banner{
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.banner img{
+  width: 100%;
+}
+*/
+
+/* Se você for usar seções de autores */
+/* .autores-principais {
+  align-items: center;
+}
+
+.autor-item {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+}
+
+.autor-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.autores-principais .autor-item p {
+  font-size: 1.2em;
+}
+
+.autor{
+  display: flex;
+  gap: 30px;
+}
+
+.aut img{
+    border-radius: 50%;
+
+}
+
+.autores-destaque{
+  display: flex;
+  gap: 30px;
+}
+
+.gen{
+  border-radius: 0;
+  font-weight: bold;
+}
+*/
+
+/* Se você for usar um background fixo */
+/*
+.background {
+  background-image: url(https://i.pinimg.com/736x/c6/75/fc/c675fcfb3de85c2c389b5793654ac5a7.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+*/

@@ -1,0 +1,162 @@
+body {
+  background-color: rgb(248 245, 238);
+  color: #a5572a;
+}
+
+.banner{
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.banner img{
+  width: 100%;
+}
+.all{
+  margin: 0 5%;
+  padding: 10px 15px;
+}
+
+.all .book-item img{
+  width: 200px;
+  border-radius: 8px;
+  height: 300px;
+}
+.secao-carrossel{
+    margin: 20px;
+    padding: 20px;
+  }
+  
+.secao-carrossel h2 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #7b4120;
+}
+a{
+  text-decoration: none;
+  color: #7b4120;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 5px;
+}
+
+.scroll-button img {
+  width: 30px;
+  height: auto;
+  display: block;
+}
+
+.left-arrow {
+  left: -35px;
+}
+
+.right-arrow {
+  right: -35px;
+}
+
+.books-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.books-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.books-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.book-item {
+  flex: 0 0 auto;
+  text-align: center; 
+}
+
+.book-item {
+  flex: 0 0 auto;
+  width: 230px;
+  text-align: center;
+}
+
+.book-item img {
+  max-width: 100%;
+  height: 300px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+
+.book-item .avaliacao {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.book-item .preco {
+  font-weight: bold;
+}
+
+.autores-principais {
+  align-items: center; 
+}
+
+.autor-item {
+  flex: 0 0 auto;
+  width: 200px; 
+  text-align: center;
+}
+
+.autor-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.autores-principais .autor-item p {
+  font-size: 1.2em;
+}
+
+.autor{
+  display: flex;
+  gap: 30px;
+}
+
+.aut img{
+    border-radius: 50%;
+
+}
+
+.autores-destaque{
+  display: flex;
+  gap: 30px;
+}
+
+.gen{
+  border-radius: 0;
+  font-weight: bold;
+}
+
+/* .background {
+  background-image: url(https://i.pinimg.com/736x/c6/75/fc/c675fcfb3de85c2c389b5793654ac5a7.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+} */

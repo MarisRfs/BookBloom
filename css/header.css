@@ -1,0 +1,88 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 0 90px;
+  height: 70px;
+  background-color: #f4d2d9;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Logo + texto alinhados à esquerda */
+.logo-icone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Imagem do logo */
+.logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+}
+
+.icone a {
+  text-decoration: none;
+  color: #6d343e;
+  font-size: 50px;
+  font-family: "Italiana", serif;
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto; 
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links svg {
+  width: 35px;
+  height: 35px;
+  color: #6d343e;
+  transition: transform 0.2s ease-in-out;
+}
+
+.links svg:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Campo de busca */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #6d343e;
+  outline: none;
+  font-family: "Italiana", serif;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.search-error {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  font-size: 13px;
+  color: red;
+  display: none;
+}

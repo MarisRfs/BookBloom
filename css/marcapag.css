@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+/* Marca Página Lateral - Versão Refinada */
+.marca-pagina {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: #f4d2d9 url('../img/Book.png') no-repeat center top;
+    background-size: cover;
+    box-shadow: -5px 0 15px rgba(171, 74, 93, 0.2);
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(129, 47, 63, 0.2);
+}
+
+/* Efeito de gradiente no topo */
+.marca-pagina::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(129, 47, 63, 0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Estado ativo */
+.marca-pagina.ativo {
+    right: 0;
+    animation: fadeInScale 0.4s ease forwards;
+}
+
+/* Conteúdo principal */
+.marca-pagina .conteudo {
+    padding: 120px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ab4a5d #f4d2d9;
+}
+
+/* Scrollbar personalizada */
+.marca-pagina .conteudo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.marca-pagina .conteudo::-webkit-scrollbar-thumb {
+    background-color: #ab4a5d;
+    border-radius: 3px;
+}
+
+/* Botões principais */
+.marca-pagina .conteudo button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(129, 47, 63, 0.2);
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    color: #812f3f;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(129, 47, 63, 0.05);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Alata', sans-serif;
+    font-weight: 100;
+}
+
+/* Efeito de borda esquerda nos botões */
+.marca-pagina .conteudo button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #ab4a5d;
+    transition: width 0.3s ease;
+}
+
+.marca-pagina .conteudo button:hover {
+    background-color: #fff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(129, 47, 63, 0.1);
+    color: #812f3f;
+}
+
+.marca-pagina .conteudo button:hover::after {
+    width: 6px;
+}
+
+/* Botão de fechar */
+.fechar-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: #9f5362;
+    cursor: pointer;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.fechar-btn:hover {
+    color: #812f3f;
+    background: transparent;
+    transform: rotate(90deg);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(129, 47, 63, 0.6);
+    z-index: 999;
+    display: none;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.4s ease;
+}
+
+.marca-pagina.ativo + .overlay {
+    display: block;
+}
+
+/* Categorias */
+#categorias-container {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    border: 1px solid rgba(129, 47, 63, 0.1);
+    animation: slideDown 0.3s ease-out;
+    box-shadow: inset 0 1px 3px rgba(129, 47, 63, 0.05);
+}
+
+/* Botões de categoria */
+#categorias-container button {
+    padding: 10px 15px;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(129, 47, 63, 0.1);
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    color: #812f3f;
+    display: flex;
+    align-items: center;
+}
+
+#categorias-container button:hover {
+    background-color: rgba(244, 210, 217, 0.7);
+    transform: translateX(8px);
+    box-shadow: 0 2px 4px rgba(129, 47, 63, 0.1);
+}
+
+/* Botão toggle */
+button[onclick="toggleCategorias()"] {
+    background: linear-gradient(to right, #ffafbf, #f4d2d9);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border: none;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button[onclick="toggleCategorias()"]::after {
+    content: "⌄";
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+button[onclick="toggleCategorias()"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.5s ease;
+}
+
+button[onclick="toggleCategorias()"]:hover::before {
+    left: 100%;
+}
+
+button[onclick="toggleCategorias()"].ativo::after {
+    transform: rotate(180deg);
+}
+
+/* Títulos */
+.marca-pagina h2,
+.marca-pagina h3 {
+    color: #812f3f;
+    margin: 0 0 10px 0;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .marca-pagina {
+        width: 260px;
+    }
+
+    .fechar-btn {
+        right: 10px;
+        top: 10px;
+    }
+}

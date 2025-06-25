@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #f8f5ee;
+    color: #a5572a;
+}
+
+
+.containerS {
+    padding: 60px 40px;
+    margin: 0px auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        font-family: 'Alata', sans-serif;
+        font-weight: 500;
+        font-size: 40px;
+        margin-bottom: 20px;
+        /* color: #944212; */
+    }
+
+    p {
+        font-family: 'Alata', sans-serif;
+        text-align: justify;
+    }
+
+    ;
+}
+
+.img,
+.text {
+    max-width: 45%;
+}
+
+.img {
+    height: 380px;
+    width: 480px;
+    background-size: cover;
+}
+
+.sobre-img {
+    background-image: url(https://images.pexels.com/photos/8199611/pexels-photo-8199611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-position: right;
+    width: 550px;
+}
+
+.trabalhe-img {
+    background-image: url(https://cdn.pixabay.com/photo/2019/09/30/14/29/books-4515917_1280.jpg);
+    background-position: left;
+}
+
+.trabalhe-text h1,
+.sobre-text h1 {
+    color: #944212;
+}
+
+.trabalhe-text p {
+    margin-bottom: 25px;
+}
+
+.trabalhe-text a {
+    text-decoration: none;
+    font-family: 'Alata', sans-serif;
+    color: #ffffff;
+    background-color: #A5572A;
+    padding: 10px 25px;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.trabalhe-text a:hover {
+    transform: scale(1.06);
+}
+
+.escura {
+    background-color: #f1e6dd;
+}
+
+iframe {
+    height: 300px;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.text-sede {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1,
+    .redes {
+        width: 100%;
+        color: #944212;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+}
+
+.forms {
+    background-color: #fee9e9;
+    padding: 15px 20px;
+    border-radius: 20px;
+
+    p {
+        margin-bottom: 30px;
+        color: #a52a49;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+
+    svg {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+#tiktok {
+    width: 85px;
+    height: 85px;
+    margin: -15px -20px;
+    /* pra ficar abaixo do youtube e linkedin */
+    position: relative;
+    z-index: 0;
+}
+
+/* isso pra ficar acima do tiktok que é muito grande */
+.redes-sociais a {
+    transition: all 0.1s ease;
+}
+
+.redes-sociais a:hover {
+    scale: 1.1;
+}
+
+
+.invalid {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.4);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.3s;
+}
+
+#notification-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transform: translateY(0);
+    background-color: #ecfdf5;
+    border-left: 6px solid #10b981;
+    border-radius: 12px;
+    padding: 18px 24px;
+    min-width: 260px;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 10000;
+    animation: slideDownFromTop 0.6s ease-out forwards;
+    opacity: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#notification-box .icon {
+    font-size: 24px;
+    color: #10b981;
+}
+
+#notification-box .message {
+    font-size: 1rem;
+    color: #065f46;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+@keyframes slideDownFromTop {
+    0% {
+        transform: translateY(-80%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

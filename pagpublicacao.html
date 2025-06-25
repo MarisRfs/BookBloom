@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0">
+  <title>Book Bloom</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/publicacao.css">
+  <link rel="stylesheet" href="css/barra-pesquisa.css">
+  <link rel="stylesheet" href="css/marcapag.css">
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div class="logo-icone">
+      <div class="logo">
+        <a href="./index.html">
+          <img src="img/android-chrome-512x512.png" alt="Logo BookBloom">
+        </a>
+      </div>
+      <div class="icone">
+        <a href="./index.html">BookBloom</a>
+      </div>
+    </div>
+
+    <div class="menu-links">
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Pesquisar...">
+
+        <button class="links search-button" onclick="pesquisar()">
+          <svg class="icone-pesquisar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </button>
+        <div class="search-error" id="searchError">Digite algo para pesquisar!</div>
+      </div>
+
+      <div class="links">
+        <a href="./login.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="links">
+        <a href="./genero.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="links">
+        <a href="usuario.html#curtidos">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="links">
+        <a href="./carrinho.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+          </svg>
+          <!-- Outra imagem para as compras -->
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg> -->
+        </a>
+      </div>
+
+      <div class="links">
+        <a href="#" id="marcaPaginaBtn" title="Marca Página">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Container Principal -->
+  <div class="app-container">
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+
+      <div class="profile-section">
+        <!-- Cabeçalho com fotos -->
+        <div class="profile-header">
+          <!-- Foto de capa com upload -->
+          <div class="cover-photo-container" onclick="document.getElementById('file-input-cover').click()">
+            <img class="cover-photo" src="img/banners.png" alt="Capa do perfil">
+          </div>
+        </div>
+
+        <!-- Conteúdo do perfil -->
+        <div class="profile-content">
+          <div class="profile-name">Cadastro de livro</div>
+
+          <div class="form-container">
+            <!-- Linha com Nome e Sobrenome -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="titulo">Título do livro</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Digite aqui...">
+                <button class="edit-icon" onclick="focusField('nome')">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+              </div>
+
+              <div class="form-group">
+                <label for="autor">Nome do autor</label>
+                <input type="text" id="autor" name="autor" placeholder="Digite aqui...">
+                <button class="edit-icon" onclick="focusField('sobrenome')">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Campos individuais -->
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="descricao">Sinopse</label>
+                <textarea id="descricao" name="descricao"></textarea>
+                <button class="edit-icon" style="top: 42px;" onclick="focusField('bio')">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- <div class="form-divider"></div> -->
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="palavras-chave">Palavras-chave</label>
+                <div id="tag-input" class="tag-input-wrapper">
+                  <input type="text" id="palavras-chave" placeholder="Digite e pressione 'Enter'...">
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="form-divider"></div> -->
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria" class="styled-select">
+                  <option value="" disabled selected hidden>Selecione a categoria</option>
+                  <option value="romance">Romance</option>
+                  <option value="misterio">Mistério</option>
+                  <option value="infantil">Infantil</option>
+                  <option value="psicologia">Psicologia</option>
+                  <option value="historia">História</option>
+                  <option value="culinaria">Culinária</option>
+                  <option value="humor">Humor</option>
+                  <option value="ficcao">Ficção</option>
+                  <option value="musica">Música</option>
+                  <option value="drama">Drama</option>
+                  <option value="poesia">Poesia</option>
+                  <option value="saude">Saúde</option>
+                  <option value="economia">Economia</option>
+                  <option value="arte">Arte</option>
+                  <option value="autoajuda">Autoajuda</option>
+                  <option value="ciencias">Ciências políticas e sociais</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="editora">Editora</label>
+                <select id="editora" name="editora" class="styled-select">
+                  <option value="" disabled selected hidden class>Selecione a editora</option>
+                  <option value="grupo-editorial-record">Grupo Editorial Record</option>
+                  <option value="companhia-das-letras">Companhia das Letras</option>
+                  <option value="rocco">Rocco</option>
+                  <option value="male">Malê</option>
+                  <option value="grupo-a">Grupo A</option>
+                  <option value="intriseca">Intrínseca</option>
+                  <option value="sextante">Sextante</option>
+                  <option value="darkside">Darkside</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <!-- Upload da Capa -->
+              <div class="form-group">
+                <label for="upload-capa">Capa</label>
+                <label for="upload-capa" class="upload-box">
+                  <div class="upload-content">
+                    <img src="img/download_100dp_767676_FILL0_wght400_GRAD0_opsz48.png" alt="Upload"
+                      class="upload-icon">
+                    <span class="upload-message">Faça o upload de um arquivo</span>
+                  </div>
+                </label>
+                <input type="file" id="upload-capa" name="capa" accept="image/*" style="display: none;">
+                <div id="file-name-capa" class="upload-message"></div>
+              </div>
+
+              <!-- Upload de Outras Imagens -->
+              <div class="form-group">
+                <label for="upload-imagens">Outras imagens</label>
+                <label for="upload-imagens" class="upload-box">
+                  <div class="upload-content">
+                    <img src="img/photo_library_60dp_767676_FILL0_wght400_GRAD0_opsz48.png" alt="Upload"
+                      class="upload-icon">
+                    <span class="upload-message">Selecione os arquivos</span>
+                  </div>
+                </label>
+                <input type="file" id="upload-imagens" name="imagens[]" multiple accept="image/*"
+                  style="display: none;">
+                <div id="file-list" class="upload-message">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="senha">Preço do livro</label>
+                <input type="text" id="preco" name="preco" placeholder="Digite o valor do livro ">
+                <button class="edit-icon" title="R$">
+                  <!-- <i class="fas fa-pencil-alt"></i> -->
+                </button>
+              </div>
+            </div>
+
+            <div class="form-direitos">
+              <label class="titulo-direitos" for="direitos">Direitos de publicação</label>
+              <label class="direitos-linha">
+                <input type="checkbox" name="aceite" required>
+                <span class="texto-direitos">
+                  Declaro que li e aceito os
+                  <a href="termo/termos_de_publicacao.pdf"
+                    style="color: blue; text-decoration: underline; font-style: italic;">
+                    Termos de publicação.
+                  </a>
+                </span>
+              </label>
+            </div>
+
+            <!-- Botão de Salvar -->
+            <div class="button-row">
+              <button class="save-button">Salvar rascunho</button>
+              <button class="save-button publish">Publicar livro</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="color-bg">
+      <div class="footer">
+        <div class="titulo">
+          <h1>Book Bloom</h1>
+        </div>
+        <div class="divisao">
+          <div class="risco"></div>
+        </div>
+
+        <div class="sobre">
+          <h3 class="titulos">Sobre a Book Bloom</h3>
+          <a href="sobre.html">Quem Somos</a>
+          <a href="sobre.html#trabalhe">Trabalhe Conosco</a>
+        </div>
+        <div class="atendimento">
+          <h3 class="titulos">Atendimento ao cliente</h3>
+          <a href="sobre.html#contatos">Entre em Contato</a>
+          <a href="politica-privacidade.html">Política de Privacidade</a>
+          <a href="politica-entrega-e-troca.html">Política de Entrega e Devolução</a>
+          <a href="politica-vendas.html">Política de Vendas</a>
+        </div>
+        <div>
+          <h3 class="titulos">Siga-nos</h3>
+          <div class="social-icons">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#812f3f"
+                viewBox="0 0 256 256">
+                <path
+                  d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z">
+                </path>
+              </svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#812f3f"
+                viewBox="0 0 256 256">
+                <path
+                  d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z">
+                </path>
+              </svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#812f3f"
+                viewBox="0 0 256 256">
+                <path
+                  d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z">
+                </path>
+              </svg></a>
+          </div>
+          <div class="social-icons">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#812f3f"
+                viewBox="0 0 256 256">
+                <path
+                  d="M224,74a50.06,50.06,0,0,1-50-50,6,6,0,0,0-6-6H128a6,6,0,0,0-6,6V156a22,22,0,1,1-31.43-19.89A6,6,0,0,0,94,130.69V88a6,6,0,0,0-7-5.91C52.2,88.28,26,120.05,26,156a74,74,0,0,0,148,0V112.93A101.28,101.28,0,0,0,224,126a6,6,0,0,0,6-6V80A6,6,0,0,0,224,74Zm-6,39.8a89.13,89.13,0,0,1-46.5-16.69A6,6,0,0,0,162,102v54a62,62,0,0,1-124,0c0-27.72,18.47-52.48,44-60.38v31.53A34,34,0,1,0,134,156V30h28.29A62.09,62.09,0,0,0,218,85.71Z">
+                </path>
+              </svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#812f3f"
+                viewBox="0 0 256 256">
+                <path
+                  d="M216,26H40A14,14,0,0,0,26,40V216a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V40A14,14,0,0,0,216,26Zm2,190a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V40a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM94,112v64a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0Zm88,28v36a6,6,0,0,1-12,0V140a22,22,0,0,0-44,0v36a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0v2.11A34,34,0,0,1,182,140ZM98,84A10,10,0,1,1,88,74,10,10,0,0,1,98,84Z">
+                </path>
+              </svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#812f3f"
+                viewBox="0 0 256 256">
+                <path
+                  d="M245.54,69.71A6,6,0,0,0,240,66H208.4a46.6,46.6,0,0,0-40.33-24,44.93,44.93,0,0,0-32.31,13.12A45.92,45.92,0,0,0,122,88v8.66c-42-10-76.6-44.52-77-44.88A6,6,0,0,0,34.8,55.46c-4.25,47.22,9.42,78.75,21.64,96.89a107.71,107.71,0,0,0,23.07,25c-15.49,19-41.34,28.89-41.62,29a6,6,0,0,0-2.88,9C36,216.83,45.78,230,80,230c69.88,0,128.23-54,133.82-123.34l30.42-30.41A6,6,0,0,0,245.54,69.71ZM203.76,99.76a6,6,0,0,0-1.75,3.86C197.93,167.76,144.33,218,80,218c-14,0-22.76-2.41-28.06-4.8,11.3-5.68,29.72-16.88,41.05-33.87a6,6,0,0,0,.85-4.67A6,6,0,0,0,91,170.82c-.13-.08-13.13-7.86-25-25.72C52,124,45.31,98.43,46,68.88c14.88,12.6,45.57,35.09,81,41a6,6,0,0,0,7-5.92V88a34,34,0,0,1,10.19-24.34A33.05,33.05,0,0,1,167.93,54c13.43.17,26,8.37,31.24,20.4a6,6,0,0,0,5.5,3.6h20.84Z">
+                </path>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Book Bloom. Todos os direitos reservados.
+    </div>
+  </footer>
+
+
+
+  <script src="js/pagpublicacao.js"></script>
+  <script src="js/barra-pesquisa.js"></script>
+  <script src="js/marcapag.js"></script>
+
+  <!-- Marca Página Lateral -->
+  <div id="marcaPagina" class="marca-pagina">
+
+    <!-- Botão de Fechar -->
+    <button class="fechar-btn" onclick="fecharMenu()">×</button>
+
+    <!-- Conteúdo da Lateral -->
+    <div class="conteudo">
+      <button onclick="location.href='./usuario.html#curtidos'">Curtidos</button>
+      <button onclick="location.href='./usuario.html#compras'">Compras recentes</button>
+      <button onclick="location.href='./usuario.html#salvos'">Salvos</button>
+
+      <!-- Botão para mostrar/ocultar categorias -->
+      <button onclick="toggleCategorias()">Categorias</button>
+
+      <!-- Categorias -->
+      <div id="categorias-container">
+        <button onclick="location.href='./genero.html'">💖 Romance</button>
+        <button onclick="location.href='./genero.html'">🧚 Fantasia</button>
+        <button onclick="location.href='./genero.html'">🕵️ Mistério</button>
+        <button onclick="location.href='./genero.html'">🚀 Ficção Científica</button>
+        <button onclick="location.href='./genero.html'">🌱 Autoajuda</button>
+        <button onclick="location.href='./genero.html'">🎒 Jovem Adulto</button>
+        <button onclick="location.href='./genero.html'">📜 Clássicos</button>
+        <button onclick="location.href='./genero.html'">👻 Terror</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay que desfoca o fundo -->
+  <div class="overlay" onclick="fecharMenu()"></div>
+</body>
+
+</html>

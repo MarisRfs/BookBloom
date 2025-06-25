@@ -1,0 +1,118 @@
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible; 
+  width: 60px;
+  transition: width 0.3s ease;
+}
+
+.search-input {
+    position: absolute;
+    right: 60px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    opacity: 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Italiana', serif;
+    border: none;
+    border-radius: 30px;
+    background-color: #f8f5ee;
+    outline: none;
+    z-index: 1;
+    transition: width 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+    color: #a5572a;
+    font-weight: bold   ;
+}
+
+.search-container.active .search-input {
+    width: 470px;
+    opacity: 1;
+    border: 1px solid #7b4120;
+}
+
+.search-container.active .search-input.input-border {
+    border: 1.5px solid #f8f5ee;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.icone-pesquisar {
+    height: 30px;
+    color: #6d343e;
+    transition: all 0.2s ease-in-out;
+}
+
+.icone-pesquisar:hover {
+    height: 35px;
+    cursor: pointer;
+}
+
+.search-error {
+    position: absolute;
+    top: 100%; 
+    left: 0;   
+    font-size: 0;
+    opacity: 0;
+    color: #842029;
+    background-color: #fbbec3;
+    border: 1px solid #a65961;
+    border-radius: 8px;
+    padding: 0;
+    margin-top: 5px;
+    z-index: 10;
+    max-width: 480px;
+    white-space: nowrap;
+    transition: all 0.3s ease-out;
+    font-family: 'Italiana', serif;
+    font-weight: bold;
+}
+
+.search-error.show-error {
+    font-size: 14px;
+    opacity: 1;
+    padding: 8px 16px;
+    width: max-content;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff8f3;
+  color: #a5572a;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.popup-box button {
+  margin-top: 15px;
+  padding: 8px 18px;
+  background: #a5572a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+

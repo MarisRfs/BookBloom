@@ -1,0 +1,97 @@
+form {
+    width: 100%;
+}
+
+label {
+    /*Para ter certeza que todas as labels tem o mesmo tamanho e estão propriamente alinhadas */
+    display: inline-block;
+    width: 100%;
+    font-size: 24px;
+    font-family: 'Alata';
+    color: rgb(165 87 42);
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    font-size: 16px;
+    font-family: 'Alata', sans-serif;
+    width: 100%;
+    color: #75334c;
+    background-color: #E9D1CA;
+    border: 1px solid #E9D1CA;
+    padding: 14px;
+    /* margin-bottom: 20px; */
+    border-radius: 12px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #886D63;
+}
+
+textarea {
+    margin-bottom: 30px;
+
+    /* Para alinhar corretamente os campos de texto de várias linhas com sua label*/
+    vertical-align: top;
+    /* Para dar espaço suficiente para digitar algum texto */
+    height: 10em;
+    /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #886D63;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    font-size: 20px;
+    font-family: 'Alata', sans-serif;
+    color: #845341;
+    background-color: #E9D1CA;
+    border: 0;
+    padding: 10px 60px;
+    margin: auto 0px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    transition: all 0.1s ease;
+}
+
+.submit:hover {
+    scale: 1.05;
+    color: rgb(253 239 234);
+    background-color: rgb(210 155 155);
+    cursor: pointer;
+}
+
+button.submit {
+    background-color: #fda4af; /* rosa claro */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(253, 164, 175, 0.4);
+    transform: translateY(0); /* base consistente */
+}
+
+button.submit:hover {
+    background-color: #fb7185; /* rosa mais forte */
+    box-shadow: 0 6px 14px rgba(251, 113, 133, 0.4);
+}
+
+button.submit:active {
+    background-color: #f43f5e; /* vermelho rosado */
+    box-shadow: 0 2px 6px rgba(244, 63, 94, 0.4);
+}

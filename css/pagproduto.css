@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(248 245, 238);
+    color: #a5572a;
+}
+
+.divisoria {
+    margin: auto 0px;
+    min-width: 1px;
+    height: 800px;
+    background-color: #efcfbc;
+}
+
+.pageProduto {
+    width: 100%;
+    font-family: "Alata", sans-serif;
+}
+
+.mainProduto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    /* Garante que os itens fiquem em uma única linha */
+    min-width: fit-content;
+    /* Expande conforme necessário */
+}
+
+.dadosP,
+.preview {
+    padding: 65px 90px;
+    width: 49.9%;
+    flex-shrink: 0;
+    width: 710px;
+    /* Impede que os itens encolham */
+    box-sizing: border-box;
+}
+
+.previewContainer,
+.dadosPcontainer {
+    width: 100%;
+}
+
+.dadosPcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+/* preview */
+
+.imgs {
+    display: flex;
+    justify-content: space-between;
+
+    .imgDestaque {
+        width: 330px;
+        height: 495px;
+        background-position: center;
+        background-size: cover;
+        /* js */
+        transition: background-image 0.3s ease;
+    }
+
+    .item {
+        background-image: url(https://i.pinimg.com/736x/7a/75/5d/7a755db937c4b88fc41cb8ec942aa379.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .active {
+        background-image: url(https://i.pinimg.com/736x/de/12/11/de1211c90f928e1d57b6f330667cae07.jpg);
+    }
+
+    .prev {
+        background-image: url(https://m.media-amazon.com/images/I/91B3t9R7zTS._UF1000,1000_QL80_.jpg);
+    }
+
+    .next {
+        background-image: url(https://i.pinimg.com/736x/de/12/11/de1211c90f928e1d57b6f330667cae07.jpg);
+    }
+
+
+    .miniImgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .mini {
+            width: 145px;
+            height: 222px;
+            /* js */
+            background-position: center;
+            background-size: cover;
+            cursor: pointer;
+            filter: brightness(0.5);
+            transition: all 0.2s ease, border 0.2s ease;
+        }
+
+        /* js */
+        .mini:hover {
+            transform: scale(1.05);
+        }
+
+        .active-mini {
+            filter: brightness(1);
+        }
+    }
+
+    /* js */
+    /* Imagens fixas para as miniaturas */
+    .miniImgs .mini[data-img="prev"] {
+        background-image: url('https://m.media-amazon.com/images/I/91B3t9R7zTS._UF1000,1000_QL80_.jpg');
+    }
+    
+    .miniImgs .mini[data-img="next"] {
+        background-image: url('https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/5656/15420/contratapa-aristteles-y-dante-secretos-universo__37767.1649098004.jpg?c=2?imbypass=on');
+    }
+    
+    /* Remove a miniatura 'main' se não for mais necessária */
+    .miniImgs .mini[data-img="main"] {
+        display: none;
+    }
+}
+
+.buttonsImg {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    margin-left: 340px;
+
+    .voltar,
+    .ir {
+        width: 28px;
+        height: 28px;
+        border-radius: 100%;
+        font-family: "Victor Mono", monospace;
+        font-weight: 900;
+        font-size: 16px;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .voltar {
+        background-color: white;
+        border: 2px solid black;
+    }
+
+    .ir {
+        background-color: black;
+        color: white;
+        border: none;
+    }
+}
+
+.recentes {
+    margin-top: 30px;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 25px;
+    }
+
+    .rcts {
+        display: flex;
+        gap: 70px;
+
+        a {
+            text-decoration: none;
+            color: #a5572a;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            scale: 1.05;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .lvr-1 .imgLivro {
+            background-image: url(https://m.media-amazon.com/images/I/81HZ78U0KkL._UF894,1000_QL80_.jpg);
+        }
+
+        .lvr-2 .imgLivro {
+            background-image: url(https://intrinseca.com.br/wp-content/uploads/2023/05/image-47.png);
+        }
+
+        .lvr-3 .imgLivro {
+            background-image: url(https://m.media-amazon.com/images/I/71SYepTUsDL.jpg);
+        }
+    }
+
+    .imgLivro {
+        width: 100px;
+        height: 151px;
+        /* background-image: url(https://i.pinimg.com/736x/de/12/11/de1211c90f928e1d57b6f330667cae07.jpg); */
+        background-color: rgba(217, 217, 217, 1);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* preview - fim */
+
+/* dadosP */
+
+/* produto */
+.nomeP {
+    color: #944212;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.infoP {
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+/* produto - fim */
+
+/* preco */
+.precoP {
+    /* margin-top: 65px; */
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.avaliacao {
+    display: flex;
+    flex-direction: row;
+}
+
+.quantAvals {
+    margin-left: 30px;
+}
+
+/* Estrelas */
+.rating-box {
+    display: flex;
+    pointer-events: auto;
+}
+
+.rating-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.stars i {
+    color: #f3cdb6;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    pointer-events: auto;
+}
+
+.stars i.active {
+    color: #a5572a;
+}
+
+.littleStars i {
+    font-size: 11px;
+}
+
+/* Estrelas - fim */
+/* preco - fim */
+
+/* cor */
+.selectCor {
+    /* margin-top: 50px; */
+    display: flex;
+    gap: 188px;
+
+    a {
+        text-decoration: none;
+        color: #a5572a;
+        /* transition: all 0.2s ease; */
+        transition: all 0.15s ease;
+        display: inline-block;
+    }
+
+    a:hover {
+        scale: 1.09;
+    }
+
+    .col1 {
+        width: 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .col2 {
+        width: 90px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: 400;
+        color: #944212;
+    }
+
+    .cores {
+        margin-top: 25px;
+        display: flex;
+        gap: 40px;
+    }
+
+    .cor {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        border: none;
+        transition: border 0.1s ease;
+    }
+
+    .cor:hover {
+        cursor: pointer;
+    }
+
+    .cor.active {
+        border: 2px rgb(44, 44, 44) solid;
+    }
+
+    .cor.blur {
+        border: none;
+    }
+
+    .c1 {
+        background-color: rgba(239, 226, 226, 0.63);
+    }
+
+    .c2 {
+        background-color: rgba(190, 180, 180, 1);
+    }
+
+    .c3 {
+        background-color: rgba(158, 154, 154, 1);
+    }
+
+    .c4 {
+        background-color: rgba(105, 103, 103, 1);
+    }
+}
+
+/* cor - fim */
+
+.selectCapa {
+    h2 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 60px;
+    /* margin-top: 50px; */
+
+    button {
+        font-family: "Alata", sans-serif;
+        font-size: 24px;
+        width: 210px;
+        height: 60px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+    }
+}
+
+.compre {
+    color: #7b4120;
+    background-color: #f8f5ee;
+    border: 3px solid #7b4120;
+}
+
+.adicione {
+    background-color: #7b4120;
+    color: #f8f5ee;
+    border: none;
+}
+
+.compre:hover, .adicione:hover {
+    scale: 1.1;
+}
+/* Buttons - fim*/
+
+/* Entrega Frete */
+.entregaFrete {
+    /* margin-top: 50px; */
+    font-size: 15px;
+
+    .entrega,
+    .frete {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        margin-top: 7px;
+    }
+
+    hr {
+        border: 1px #efcfbc solid;
+    }
+}
+
+/* Entrega Frete - fim */
+
+/* CORREÇÕES */
+html,
+body {
+    overflow-x: auto;
+    /* Permite scroll horizontal */
+    width: 100%;
+    min-width: fit-content;
+    /* Garante que o body se expanda com o conteúdo */
+}

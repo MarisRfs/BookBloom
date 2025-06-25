@@ -1,0 +1,39 @@
+.all {
+    margin: 0 auto;
+    margin-top: 25px;
+    max-width: 1000px;
+}
+
+.politicas * {
+    margin: 0;
+    width: 1000px;
+}
+
+.politicas h1 {
+    color: #ab4a5d;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.politicas h2 {
+    color: #f5859b;
+    margin-bottom: 10px;
+    margin-left: 5%;
+}
+
+.political-text {
+    margin-bottom: 30px;
+}
+
+.darker{
+    background-color: #f1e6dd;
+    border-radius: 7px;
+    width: 1050px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.light{
+    margin-top: 20px;
+}
